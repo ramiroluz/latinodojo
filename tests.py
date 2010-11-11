@@ -23,6 +23,8 @@ def soma_par(telefone):
     for i in telefone:
         soma += int(i)
     return soma % 2 == 0                    
+def processa_lista(telefones):
+    lista_procesada = {}
 
 
 def teste_tem_6_digitos():

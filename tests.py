@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding=utf-8 -*-
 #        0123456
-TELEFONE='499021'
+TELEFONE = '499021'
+TELEFONES = ['629701', '349765', '542594', '628307', '695687']
+
 
 def tem_6_digitos(telefone):
     return len(telefone) == 6
@@ -36,3 +38,9 @@ def teste_tem_numeros_consecutivo():
 
 def teste_soma_par():
     assert soma_par(TELEFONE) == False
+
+def teste_lista():
+    assert processa_lista(TELEFONES) == {'629701':False, '349765':True, 
+        '542594':False, '628307': True, '695687': False}
+
+

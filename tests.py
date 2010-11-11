@@ -1,37 +1,38 @@
 #!/usr/bin/env python
 # -*- coding=utf-8 -*-
 #        0123456
-Telefone=499021
+TELEFONE='499021'
 
-def Tem6Digitos(NTelefone):
-    return len(str(NTelefone))==6
+def tem_6_digitos(telefone):
+    return len(telefone) == 6
 
-def PrimeiroUltimoIguais(NTelefone):
-    stelefone = str(NTelefone)
-    return stelefone[0] == stelefone[-1]
+def primeiro_ultimo_iguais(telefone):
+    return telefone[0] == telefone[-1]
 
-def temNumerosConsecutivo(NTelefone):
-    sTelefone = str(NTelefone)
-    for i, n in enumerate(sTelefone[:-2]):
-        if n == sTelefone[i+1]:
+def tem_numeros_consecutivo(telefone):
+    for i, n in enumerate(telefone[:-2]):
+        if n == telefone[i + 1]:
              return True
     else:
         return False
-                    
+
+def soma_par(telefone):
+    soma = 0
+    for i in telefone:
+        soma += int(i)
+    return soma % 2 == 0                    
 
 
-
-
-def test1():
-    assert Tem6Digitos(Telefone)==True
+def teste_tem_6_digitos():
+    assert tem_6_digitos(TELEFONE) == True
     
-def test2():
+def teste_primeiro_ultimo_iguais():
     #testa se o primeiro e ultimo digito sao iguais
-    assert PrimeiroUltimoIguais(Telefone)==False
+    assert primeiro_ultimo_iguais(TELEFONE) == False
 
-def test3():
+def teste_tem_numeros_consecutivo():
     #testa se ha numero consecutivo iguais
-    assert temNumerosConsecutivo(499021)==True
+    assert tem_numeros_consecutivo(TELEFONE) == True
 
-def testNumeroConsecutivo():
-    assert temNumerosConsecutivo(491021)==False
+def teste_soma_par():
+    assert soma_par(TELEFONE) == False

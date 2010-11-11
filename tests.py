@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding=utf-8 -*-
-
+#        0123456
 Telefone=499021
 
 def Tem6Digitos(NTelefone):
@@ -9,6 +9,18 @@ def Tem6Digitos(NTelefone):
 def PrimeiroUltimoIguais(NTelefone):
     stelefone = str(NTelefone)
     return stelefone[0] == stelefone[-1]
+
+def temNumerosConsecutivo(NTelefone):
+    sTelefone = str(NTelefone)
+    for i, n in enumerate(sTelefone[:-2]):
+        if n == sTelefone[i+1]:
+             return True
+    else:
+        return False
+                    
+
+
+
 
 def test1():
     assert Tem6Digitos(Telefone)==True
@@ -19,4 +31,7 @@ def test2():
 
 def test3():
     #testa se ha numero consecutivo iguais
-    assert NumerosConsecutivo(Telefone)==True
+    assert temNumerosConsecutivo(499021)==True
+
+def testNumeroConsecutivo():
+    assert temNumerosConsecutivo(491021)==False
